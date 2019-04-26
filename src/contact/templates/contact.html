@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block contact %}
+
+<div class='row'>
+<div class="offset-md-3 col-md-6"> <!--##in bootstrap there are 12 columns in a row, so here our form takes 4 rows##-->
+<h1> {{title}} </h1>
+{% if confirm_message %}
+<p> {{confirm_message}} </p>
+{% endif %}
+{% if form %}
+<form method='POST' action=''> {% csrf_token %} <!--##the csrf_token prevents cross sites forgery; it is required by django- makes the form more secure##-->
+  {{ form|crispy }} <!--##this renders the form as html paragraph##-->
+  <input type='submit' value='submit form' class="btn-outline-dark">
+</form>
+{% endif %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Your Shopping Cart| Checkout
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="margin-top: 6%">
+            <div class="col-md-8">
+                <h4 class="page-header">Checkout</h4>
+                <form action="." method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}<br>
+                    <input type="submit" class="btn btn-primary" value="Continue">
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="page-header">
+                    Your Order
+                </div>
+                <ul class="list-group" style="border-radius:1px">
+                    {% for item in cart %}
+                        <li class="list-group-item">
+                        {{ item.quantity }}x {{ item.product.name }}
+                        <span style="border-radius:1px">&#8377; {{ item.total_price }}</span>
+                        </li>
+                    {% endfor %}
+
+                <li class="list-group-item active">Total Cost: &#8377; {{ cart.get_total_price }}</li><br>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+h1{
+  color:#343A40;
+}
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
