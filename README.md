@@ -27,6 +27,6 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
-> The application would be running at [localhost:8000](localhost:8000/home/) by default.
+> The application would be running at [localhost:8000](https://localhost:8000/home/) by default.
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
