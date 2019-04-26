@@ -1,4 +1,4 @@
-# ecommerce-website
+# ecommerce-website-django
 A basic ecommerce website for beginners to learn Django Full Stack Web Development.
 
 To start with this project, first create a virtual environment and install all packages specified in requirements.txt.
